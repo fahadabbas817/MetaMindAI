@@ -20,7 +20,7 @@ async function runChat(query, page) {
       endpoint = `${API_BASE_URL}/video`; // Adjust if the actual endpoint differs
       break;
     default:
-      throw new Error("Invalid page type");
+      throw new Error("Invalid page type error");
   }
 
   try {
