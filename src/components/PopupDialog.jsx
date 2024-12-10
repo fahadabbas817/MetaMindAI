@@ -45,7 +45,7 @@ const PopupDialog = () => {
       {/* Dialog Box */}
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="bg-gradient-to-r from-white/10 to-white/20 backdrop-blur-md text-white w-96 h-96 lg:w-[40rem] lg:h-[30rem] p-6 rounded-lg shadow-lg flex flex-col justify-between">
+          <div className="bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-md text-white w-96 h-96 lg:w-[40rem] lg:h-[30rem] p-6 rounded-lg shadow-lg flex flex-col justify-between">
             {/* <h2 className="text-2xl font-bold mb-4">
               Hi! What can we do for you?
             </h2> */}
@@ -85,7 +85,7 @@ const PopupDialog = () => {
                 </div>
               ) : 
               <div className="containerer flex justify-center">
-                <img className="h-52 w-52" src={assets.buildWithAi} alt="" />
+                <img className=" h-32 md:h-32 md:w-52" src={assets.buildWithAi} alt="builWithAI" />
               </div>
               }
             </div>

@@ -12,10 +12,10 @@
 #root{
   min-height: 100vh;
   display: flex;
-  animation: fadein 2s ease-in-out;
+  /* animation: fadein 2s ease-in-out;
   will-change: opacity;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 @keyframes fadein{
