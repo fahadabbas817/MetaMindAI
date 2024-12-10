@@ -22,19 +22,19 @@ const Sidebar = () => {
     return (
       <>
         <div
-          className={`bg-slate-700 px-3 ${extend && "relative z-10 w-96"}`}
+          className={`bg-slate-700 px-2 ${extend && "relative z-10 w-96"}`}
         >
           <div className="top-menu">
             <CiMenuFries
-              className="text-3xl mt-8 cursor-pointer ml-4 text-slate-200 hover:text-cyan-400 transition-all ease-in "
+              className=" text-xl md:text-3xl mt-5 md:mt-8 cursor-pointer ml-3 text-slate-200 hover:text-cyan-400 transition-all ease-in "
               onClick={() => setExtend(!extend)}
             />
             <div
               onClick={() => newChatbtn()}
-              className="flex cursor-pointer mt-10 items-center gap-2 bg-slate-500 rounded-lg p-2 justify-between max-w-40"
+              className="flex cursor-pointer mt-10 items-center text-center gap-1 md:gap-2 bg-slate-500 rounded-lg p-1 md:p-2 justify-between max-w-40"
             >
-              <IoAddSharp className="text-3xl text-white" />
-              {extend ? <p className="text-sm text-white">New Summary</p> : null}
+              <IoAddSharp className="ml-1 text-xl text-white" />
+              {extend ? <p className=" text-xs md:text-sm text-white">New Summary</p> : null}
             </div>
             {extend ? (
               <div className="Summary mt-10">
@@ -43,7 +43,7 @@ const Sidebar = () => {
                   {summaryResult !== "" && (
                     <div className="summaryResult w-full bg-slate-600 text-white mt-2 rounded-lg p-3">
                       {/* Render the summary */}
-                      <p className="text-base leading-relaxed mb-4">
+                      <p className="text-xs md:text-sm md:leading-relaxed mb-4 text-left">
                         {summaryResult.summary}
                       </p>
   

@@ -29,7 +29,7 @@ export const Result = () => {
   }, [messages]);
 
   return (
-    <div className="result mt-8" ref={parent}>
+    <div className="result mt-8 md:mt-0 h-[40rem] sm:h-[35rem] xl:h-[30rem] " ref={parent}>
       {messages[currentPage]?.map((message, index) => (
         <div key={index} className="message">
           {message.role === "user" ? (

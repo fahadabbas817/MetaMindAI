@@ -22,6 +22,7 @@ const currentPage = location.pathname.replace("/", ""); // e.g., "text", "image"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           disabled = {loading}
+          className=""
           type="text"
           placeholder="What would you like to generate"
         />
@@ -35,7 +36,7 @@ const currentPage = location.pathname.replace("/", ""); // e.g., "text", "image"
           )}
         </div>
       </div>
-      <p className="bottomtext text-white">
+      <p className="bottomtext  text-[2px] md:text-sm text-white">
         Please crosscheck the information from cited links
       </p>
     </div>

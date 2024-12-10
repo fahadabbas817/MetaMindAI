@@ -13,7 +13,7 @@ const Main = () => {
 
 
   return (
-    <div className="main">
+    <div className="main w-full">
       <TopMenu />
       <div className="main-container">
         <HeroSection/>
