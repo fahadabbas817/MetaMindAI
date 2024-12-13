@@ -65,7 +65,7 @@ const HeroSection = () => {
     <div className="hero-section animate-fadeInTop">
       {/* Hero Text */}
       <div className="hero-text flex flex-col gap-8  p-4">
-        <p className="text-3xl md:mt-4 md:text-[3rem] md:leading-[3rem] h-16 text-center">
+        <p className="text-2xl sm:text-3xl md:mt-4 md:text-[3rem] md:leading-[3rem] h-16 text-center">
           MetaMindAI can generate <br />
           <span className="bg-gradient-to-r from-[#4b90ff] to-[#ff5547] bg-clip-text text-transparent leading-8">
             <Typewriter
@@ -80,9 +80,9 @@ const HeroSection = () => {
           </span>
         </p>
         <p className="md:text-xl mt-10 lg:mt-14 text-gray-300 text-justify text-xs   leading-normal max-w-80 md:max-w-[80vw] mx-auto">
-          Welcome to MetaMindAI, your one-stop platform for text, images,
+          Welcome to MetaMindAI, your one-stop platform for summary, text, images,
           videos, and memes generation! Whether you’re looking to write social
-          posts, create stunning visuals, or produce engaging videos, MetaMindAI
+          posts, create stunning visuals, or produce engaging videos based on your summary, MetaMindAI
           tailors results to your unique needs.
         </p>
       </div>

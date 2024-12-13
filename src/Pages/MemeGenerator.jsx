@@ -14,11 +14,11 @@ const MemeGenerator = () => {
       <TopMenu />
       <div className="main-container">
         {messages[currentPage].length === 0 ? (
-          <div className=" intro displayer w-full p-2 px-8 mt-32  text-center animate-fadeInTop  transition-opacity duration-500">
+          <div className=" intro displayer w-full p-2 px-3 md:px-8 mt-32  text-center animate-fadeInTop  transition-opacity duration-500">
             <h1 className="text-3xl md:text-[3rem] h-12 font-bold bg-gradient-to-r from-[#4b90ff] to-[#ff5547] bg-clip-text text-transparent mb-4">
               Make them laugh!
             </h1>
-            <p className="text-lg text-white">
+            <p className="text-base md:text-xl text-slate-200">
               Describe your hilarious idea, and we’ll turn it into the perfect
               meme."
             </p>
