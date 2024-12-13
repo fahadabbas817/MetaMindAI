@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FaRegCopy } from "react-icons/fa";
 import { IoMdDownload } from "react-icons/io";
-import { FaRepeat } from "react-icons/fa6";
 
 const MemeCard = ({ memeUrl, initialMessage }) => {
   const [message, setMessage] = useState(initialMessage);

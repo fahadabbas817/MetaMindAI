@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
-import { FaUserCircle } from "react-icons/fa";
-import Loader from "./main/Loader";
 import { useContext } from "react";
 import { GeminiContext } from "./Context/GeminiContext";
 import { IoIosSend } from "react-icons/io";
@@ -9,19 +7,15 @@ import { BallTriangle } from "react-loader-spinner";
 
 
 const PopupDialog = () => {
-  //   const [isOpen, setIsOpen] = useState(true);
+  
   const [query, setQuery] = useState("");
-  const [isUser, setIsUser] = useState(false);
   const [userQuery, setUserQuery] = useState("");
 
   const {
     loading,
     handleSummarySubmit,
-    summaryResult,
-    setSummaryResult,
     isOpen,
     setIsOpen,
-    extend,
     setExtend,
   } = useContext(GeminiContext);
 
@@ -37,14 +31,14 @@ const PopupDialog = () => {
 
   return (
     <>
-      {/* Blur background */}
+      {/* T0  Blur background */}
       {isOpen && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"></div>
       )}
 
       {/* Dialog Box */}
       {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
+        <div className="fixed inset-0 flex items-center justify-center z-50 animate-fadeInTop">
           <div className="bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-md text-white w-96 h-96 lg:w-[40rem] lg:h-[30rem] p-6 rounded-lg shadow-lg flex flex-col justify-between">
             {/* <h2 className="text-2xl font-bold mb-4">
               Hi! What can we do for you?
@@ -60,14 +54,7 @@ const PopupDialog = () => {
                 </p>
               </div>
 
-              {/* {isUser && (
-                <div className="flex gap-4 items-start">
-                  <FaUserCircle className="text-white text-[2.2rem]" />
-                  <p className="bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-md text-white p-2 text-xs rounded-xl shadow-lg">
-                    {userQuery}
-                  </p>
-                </div>
-              )} */}
+         
               {loading ? (
                 <div className="popUpLoader w-full m-3 display flex flex-col items-center gap-1">
                   {/* <Loader /> */}

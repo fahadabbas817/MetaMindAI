@@ -1,7 +1,6 @@
 import React from "react";
 import { FaRegCopy } from "react-icons/fa6";
-import { IoMdDownload } from "react-icons/io";
-import { FaRepeat } from "react-icons/fa6";
+
 const TextCards = ({ message }) => {
   return (
     <div>
@@ -15,12 +14,7 @@ const TextCards = ({ message }) => {
           >
             <FaRegCopy className="text-sm hover:text-cyan-400 hover:translate-y-[2px] transition-all ease-in" />
           </button>
-          {/* <button
-          className="text-xs "
-          onClick={() => alert("Share functionality coming soon!")}
-        >
-          Share
-        </button> */}
+      
         </div>
       </div>
     </div>

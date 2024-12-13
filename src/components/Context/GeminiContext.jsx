@@ -1,6 +1,6 @@
 import { createContext,useState } from "react";
 import runChat from "../../config/geminiapi";
-import { useMutation } from "react-query";
+
 
 export const GeminiContext = createContext();
 
@@ -8,7 +8,7 @@ const ContextProvider = (props)=>{
     const [input,setInput]= useState('');
     const [loading, setLoading] = useState(false);
     const [result,setResult]= useState('');
-    const [prevPrompt, setPrevPrompt] = useState([]);
+
     const [recentPrompt, setRecentPrompt] = useState('');
     const [showResult, setshowResult] = useState(false);
     const [messages, setMessages] = useState({
@@ -24,6 +24,8 @@ const ContextProvider = (props)=>{
     const [prompt, setPrompt] = useState("")
 
 
+
+    //summary request handler 
     const handleSummarySubmit = async (query) => {
       if (!query.trim()) return;
       setLoading(true)
@@ -41,11 +43,7 @@ const ContextProvider = (props)=>{
    
 
 
-    const delayProvider =(index,nextWord)=>{
-            setTimeout(function(){
-                setResult(prev=>prev+nextWord)
-            }, 70*index)
-    }
+  
     //for the sidebar button to make new chat and land on the chatbot
     const newChatbtn=()=>{
         setSummaryResult("")
@@ -53,6 +51,7 @@ const ContextProvider = (props)=>{
         
     }
 
+    //Regenerate handler for all the chats
     const handleRegenerate = async (index) => {
       // Identify the current page's messages
       const pageMessages = messages[currentPage];
@@ -106,7 +105,7 @@ const ContextProvider = (props)=>{
     
     
 
-
+// Handler function for all the chats that takes input and page type as arguments, send request to handleOutPutSubmit and recieve response and store them into correspondind state array according to page type. 
     const handleInputSubmit = async (query, page) => {
       if (!query.trim()) return;
       setshowResult(true)
@@ -148,71 +147,8 @@ const ContextProvider = (props)=>{
       
 
 
-    const onSent=async (query)=>{
-        setResult('');
-        setLoading(true);
-        setshowResult(true)
-        let response;
-        if(prompt===undefined){
-            setRecentPrompt(prompt)
-            prompt("")
-            setPrevPrompt(prev=>[input,...prev])
-            response = await runChat(prompt);
-        }
-        else{
-            setRecentPrompt(prompt)
-            response = await runChat(prompt);
-
-        }
-        
-        let responseArray = response.split('**');
-        
-        for (let i = 0;i<responseArray.length;i++){
-            const nextWord = responseArray[i];
-            delayProvider(i,nextWord+" ");
-        }
-        setLoading(false);
-        
-
-    }
-    // onSent('What is react?');
-
-    // const onSent = async (prompt) => {
-    //     setLoading(true);
-    //     setshowResult(true);
-    
-    //     if (prompt === undefined) {
-    //         // Handling user input
-    //         setRecentPrompt(input);
-    //         setInput("");
-    //         setMessages((prevMessages) => [
-    //             ...prevMessages,
-    //             { type: "user", text: input }, // Add user message
-    //         ]);
-    //         prompt = input; // Use the user input as the prompt
-    //     } else {
-    //         // Handling a specific prompt (e.g., predefined or history-based)
-    //         setRecentPrompt(prompt);
-    //     }
-    
-    //     // Run chat and get the AI response
-    //     let response = await runChat(prompt);
-    
-    //     // Process response into chunks (if applicable)
-    //     let responseArray = response.split("**");
-    
-    //     // Add each response chunk as a separate AI message with delay
-    //     responseArray.forEach((chunk, index) => {
-    //         delayProvider(index, () => {
-    //             setMessages((prevMessages) => [
-    //                 ...prevMessages,
-    //                 { type: "ai", text: chunk.trim() }, // Add AI response
-    //             ]);
-    //         });
-    //     });
-    
-    //     setLoading(false);
-    // };
+   
+   
     
 
     const contextValue = {
@@ -225,17 +161,10 @@ const ContextProvider = (props)=>{
         messages, setMessages,
         prompt, setPrompt,
         setInput,
-        loading,
-        setLoading,
-        result,
-        setResult,
-        prevPrompt,
-        setPrevPrompt,
-        recentPrompt,
-        setRecentPrompt,
-        showResult,
-        setshowResult,
-        onSent,
+        loading, setLoading,
+        result,  setResult,
+        recentPrompt,setRecentPrompt,
+        showResult, setshowResult,
         newChatbtn,
     }
     return(

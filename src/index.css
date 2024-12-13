@@ -12,10 +12,27 @@
 #root{
   min-height: 100vh;
   display: flex;
-  /* animation: fadein 2s ease-in-out;
-  will-change: opacity;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+}
+
+::-webkit-scrollbar {
+  @apply w-2 md:w-3 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-slate-600;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+
+  @apply bg-slate-400;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyan-600 transition-all ease-in;
 }
 
 @keyframes fadein{
@@ -33,6 +50,9 @@
   width: 100vw;
   /* background: #131314; */
   @apply bg-gradient-to-r from-slate-900 to-slate-700;
+}
+.main::-webkit-scrollbar{
+  display: none;
 }
 .main .top-main-menu{
   display: flex;
@@ -56,79 +76,19 @@
   padding: 20px;
   color: #c4c7c5;
   margin: 20px 0px;
-  /* background: -webkit-linear-gradient(16deg,#4b90ff,#ff5547);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
+
 }
 
-/* .main .card-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
-  gap: 15px;
-  padding: 20px;
-} */
-/* .card-container .card{
-  height: 100px;
-  padding: 10px;  
-  border-radius: 10px;
-  position: relative; 
-  cursor: pointer;
-} */
-/* .main .card img{
-  width: 35px;
-  padding: 5px;
-  position: absolute;
-  background: white;
-  border-radius: 20px;
-  bottom: 10px;
-  right: 0px;
-} */
-/* .main .card p{
-  font-size: 17px;
-} */
+
 .main .card:hover{
   background: #333537;
   transition: all;
   border: 1px solid #4b90ff; 
 }
-.main .main-bottom{
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 0px 20px;
-  max-width: 900px;
-  /* margin: 0px 150px; */
-  bottom: 0px;
-}
-.search{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* background-color: #1e1f20; */
-  
-  padding: 10px 20px;
-  border-radius: 50px;
-  @apply bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-md text-white p-4 rounded-full shadow-lg
-}
-.search img{
-  width: 24px;
-  cursor: pointer;
-}
-.search input{
-  background: transparent;
-  color: #f6f7f8;
-  border: none;
-  font-size: 17px;
-  padding: 18px;
-  outline: none;
-  flex: 1;
-}
-.searchbar-image{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+
+
+
+
 .bottomtext{
   margin: 15px auto;
   text-align: center;
@@ -137,7 +97,7 @@
   
 }
 .result{
-  @apply max-h-[70vh] lg:max-h-[65vh] ;
+  @apply max-h-[63vh] lg:max-h-[65vh] ;
   overflow-y:scroll;
   padding: 5px 5%;
   display: flex;
@@ -206,9 +166,7 @@
   .main-container .hero-text{
       font-size: 36px;
   }
-  .main .card-container{
-      /* display: none; */
-  }
+  
   .main{
       width: 100vw;
   }
@@ -248,9 +206,9 @@
   }
 }
 
-.summaryMessages::-webkit-scrollbar{
+/* .summaryMessages::-webkit-scrollbar{
   display: none;
-}
+} */
 
 .sidebar{
   min-height: 100vh;

@@ -7,7 +7,7 @@ import autoAnimate from "@formkit/auto-animate";
 import TextCards from "./TextCards";
 import ImageCards from "./ImageCards";
 import VideoCard from "./VideoCard";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom"; 
 import MemeCard from "./MemeCard";
 
 export const Result = () => {
@@ -15,7 +15,7 @@ export const Result = () => {
   const currentPage = location.pathname.replace("/", "");
   const parent = useRef(null);
   const bottomRef = useRef(null);
-  const { recentPrompt, result, loading, messages, prompt, handleRegenerate } =
+  const { messages } =
     useContext(GeminiContext);
 
   // only for aut animations
@@ -29,7 +29,7 @@ export const Result = () => {
   }, [messages]);
 
   return (
-    <div className="result mt-8 md:mt-0 h-[40rem] sm:h-[35rem] xl:h-[30rem] " ref={parent}>
+    <div className="result animate-fadeInTop mt-8 md:mt-0 h-[40rem] sm:h-[35rem] xl:h-[30rem] " ref={parent}>
       {messages[currentPage]?.map((message, index) => (
         <div key={index} className="message">
           {message.role === "user" ? (
@@ -46,6 +46,7 @@ export const Result = () => {
                 <Loader />
               ) : (
                 <>
+                {/* rendering of pages based on the prop currentpage or url that will render page equivalent cards like text cards on text page and image cards on image pge */}
                   {currentPage === "text" && (
                     <TextCards
                       message={message.text}
