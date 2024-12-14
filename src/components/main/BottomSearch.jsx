@@ -28,7 +28,7 @@ const BottomSearch = () => {
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           disabled={loading}
-          className="bg-transparent text-white border-none text-lg p-4 outline-none flex-1 w-72 border-2"
+          className="bg-transparent text-white border-none text-lg p-4 outline-none flex-1 w-60 sm:w-72 md:w-80 border-2"
           type="text"
           placeholder="What would you like to generate"
         />
@@ -40,7 +40,7 @@ const BottomSearch = () => {
               className="cursor-pointer"
               onClick={() => handleInputSubmit(prompt, currentPage)}
             >
-              <IoIosSend className=" text-3xl md:text-3xl mr-4 text-white hover:text-cyan-400 transition-all ease-in" />
+              <IoIosSend className=" text-2xl sm:text-3xl mr-4 text-white hover:text-cyan-400 transition-all ease-in" />
             </span>
           )}
         </div>

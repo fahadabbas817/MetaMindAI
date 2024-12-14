@@ -20,7 +20,7 @@ const ContextProvider = (props)=>{
     const [extend, setExtend] = useState(null);
     const [summary, setSummary] = useState('')
     const [summaryResult, setSummaryResult] = useState('')
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const [prompt, setPrompt] = useState("")
 
 
