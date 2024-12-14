@@ -1,6 +1,5 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
-
 import { useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import { LuImages } from "react-icons/lu";
@@ -17,7 +16,7 @@ const HeroSection = () => {
     {
       name: "Text Posts",
       path: "/text",
-      icon: <IoDocumentTextOutline className="text-[4rem]" />,
+      icon: <IoDocumentTextOutline className="text-[4rem]"/>,
     },
     {
       name: "Images",

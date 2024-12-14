@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { CiMenuFries } from "react-icons/ci";
 
 import { IoCloseSharp } from "react-icons/io5";
-import { GeminiContext } from "./Context/GeminiContext";
+import { GeminiContext } from "../Context/GeminiContext";
 import { IoIosCreate } from "react-icons/io";
 import { FaRegCopy } from "react-icons/fa6";
 const Sidebar = () => {

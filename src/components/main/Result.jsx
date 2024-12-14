@@ -1,14 +1,14 @@
 import { useContext, useRef, useEffect } from "react";
-import { GeminiContext } from "./Context/GeminiContext";
-import { assets } from "../assets/assets";
+import { GeminiContext } from "../Context/GeminiContext";
+import { assets } from "../../assets/assets";
 import { FaUserCircle } from "react-icons/fa";
-import Loader from "./main/Loader";
+import Loader from "./Loader";
 import autoAnimate from "@formkit/auto-animate";
-import TextCards from "./TextCards";
-import ImageCards from "./ImageCards";
-import VideoCard from "./VideoCard";
+import TextCards from "../TextCards";
+import ImageCards from "../ImageCards";
+import VideoCard from "../VideoCard";
 import { useLocation } from "react-router-dom"; 
-import MemeCard from "./MemeCard";
+import MemeCard from "../MemeCard";
 
 export const Result = () => {
   const location = useLocation();

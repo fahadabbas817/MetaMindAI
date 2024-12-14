@@ -1,9 +1,9 @@
 import React from "react";
 
-import TopMenu from "./TopMenu";
-import HeroSection from "./HeroSection";
+import TopMenu from "../components/main/TopMenu";
+import HeroSection from "../components/main/HeroSection";
 
-import PopupDialog from "../PopupDialog";
+import PopupDialog from "../components/PopupDialog";
 
 const Main = () => {
   return (

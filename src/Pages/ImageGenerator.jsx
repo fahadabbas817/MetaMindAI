@@ -2,7 +2,7 @@ import React, { useContext} from "react";
 import { GeminiContext } from "../components/Context/GeminiContext";
 import TopMenu from "../components/main/TopMenu";
 
-import { Result } from "../components/Result";
+import { Result } from "../components/main/Result";
 import BottomSearch from "../components/main/BottomSearch";
 import { useLocation } from "react-router-dom";
 

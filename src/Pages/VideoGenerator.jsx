@@ -1,7 +1,7 @@
 import TopMenu from "../components/main/TopMenu";
 
 import BottomSearch from "../components/main/BottomSearch";
-import { Result } from "../components/Result";
+import { Result } from "../components/main/Result";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { GeminiContext } from "../components/Context/GeminiContext";
